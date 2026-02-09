@@ -3,6 +3,15 @@ Copying from local system into ec2:
 ```sh
 C:\Users\AVULLA UTEJ>scp -i pem-file.pem pem-file.pem ubuntu@ec2-xx-xx-xxx-xx.xx:/home/ubuntu/
 ```
+Syntax checK:
+```sh
+ubuntu@ip-172-31-37-66:~/Ansible_P1/ansible_test$ ansible-playbook --syntax-check playbook1.yml
+[WARNING]: No inventory was parsed, only implicit localhost is available
+[WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does
+not match 'all'
+
+playbook: playbook1.yml
+```
 playbook1:
 ```sh
 ubuntu@ip-xxx-xx-xx-xx:~/Ansible_P1/ansible_test$ ansible-playbook playbook1.yml
