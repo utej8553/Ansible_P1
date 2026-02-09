@@ -31,7 +31,7 @@ PLAY RECAP *********************************************************************
 localhost                  : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 
 ```
-Playbook2:
+Playbook2(localhost):
 ```sh
 ubuntu@ip-172-31-37-66:~/Ansible_P1/ansible_test$ ansible-playbook playbook2.yml
 [WARNING]: No inventory was parsed, only implicit localhost is available
@@ -70,5 +70,28 @@ ubuntu@ip-172-31-37-66:~/Ansible_P1/ansible_test$ systemctl status nginx
 
 Feb 09 13:28:50 ip-172-31-37-66 systemd[1]: Starting A high performance web server and a reverse proxy server.>
 Feb 09 13:28:50 ip-172-31-37-66 systemd[1]: Started A high performance web server and a reverse proxy server.
+
+```
+Playbook3(servers):
+```sh
+ubuntu@ip-172-31-37-66:~/Ansible_P1/ansible_test$ ansible-playbook playbook2.yml
+
+PLAY [Install and start the Nginx] ****************************************************************************
+
+TASK [Gathering Facts] ****************************************************************************************
+[WARNING]: Platform linux on host 172.31.37.104 is using the discovered Python interpreter at
+/usr/bin/python3.12, but future installation of another Python interpreter could change the meaning of that
+path. See https://docs.ansible.com/ansible-core/2.17/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [172.31.37.104]
+
+TASK [Installing nginx] ***************************************************************************************
+changed: [172.31.37.104]
+
+TASK [Starting nginx service] *********************************************************************************
+ok: [172.31.37.104]
+
+PLAY RECAP ****************************************************************************************************
+172.31.37.104              : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 
 ```
