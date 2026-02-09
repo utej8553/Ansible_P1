@@ -1,0 +1,9 @@
+---
+- name: Copying files to remote
+  hosts: servers
+
+  tasks:
+  - name: Copy files
+    copy:
+      src: /home/ubuntu/Ansible_P1/ansible_test/myfile.txt
+      dest: /home/ubuntu
