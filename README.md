@@ -33,6 +33,25 @@ localhost                  : ok=2    changed=0    unreachable=0    failed=0    s
 ```
 Playbook2:
 ```sh
+ubuntu@ip-172-31-37-66:~/Ansible_P1/ansible_test$ ansible-playbook playbook2.yml
+[WARNING]: No inventory was parsed, only implicit localhost is available
+[WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does
+not match 'all'
+
+PLAY [Install and start the Nginx] ****************************************************************************
+
+TASK [Gathering Facts] ****************************************************************************************
+ok: [localhost]
+
+TASK [Installing nginx] ***************************************************************************************
+changed: [localhost]
+
+TASK [Starting nginx service] *********************************************************************************
+ok: [localhost]
+
+PLAY RECAP ****************************************************************************************************
+localhost                  : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
 ubuntu@ip-172-31-37-66:~/Ansible_P1/ansible_test$ systemctl status nginx
 ● nginx.service - A high performance web server and a reverse proxy server
      Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
@@ -51,4 +70,5 @@ ubuntu@ip-172-31-37-66:~/Ansible_P1/ansible_test$ systemctl status nginx
 
 Feb 09 13:28:50 ip-172-31-37-66 systemd[1]: Starting A high performance web server and a reverse proxy server.>
 Feb 09 13:28:50 ip-172-31-37-66 systemd[1]: Started A high performance web server and a reverse proxy server.
+
 ```
